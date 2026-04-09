@@ -1,13 +1,19 @@
 import Foundation
-enum AudioInputError: LocalizedError {
+public enum AudioInputError: LocalizedError {
+    case microphonePermissionDenied
+    case screenCapturePermissionDenied
     case noShareableDisplay
     case missingAudioFormat
     case unsupportedAudioFormat
     case noAudioInputDevice
     case noLoopbackDevice
 
-    var errorDescription: String? {
+    public var errorDescription: String? {
         switch self {
+        case .microphonePermissionDenied:
+            return "Microphone access was denied."
+        case .screenCapturePermissionDenied:
+            return "Screen & System Audio Recording access was denied."
         case .noShareableDisplay:
             return "No display was available for ScreenCaptureKit."
         case .missingAudioFormat:

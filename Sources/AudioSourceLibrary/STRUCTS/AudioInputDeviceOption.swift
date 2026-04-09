@@ -1,5 +1,5 @@
 
-internal struct AudioInputDeviceOption: Identifiable, Hashable {
-    let id: String
-    let name: String
+public struct AudioInputDeviceOption: Identifiable, Hashable {
+    public let id: String
+    public let name: String
 }
